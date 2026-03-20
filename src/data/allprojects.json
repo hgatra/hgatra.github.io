@@ -12,14 +12,16 @@
     },
     {
         "name": "Splitly",
-        "description": "",
+        "description": "A modern, full-stack expense sharing application that makes splitting bills with friends, family, and groups effortless. Built for the Naver AI Hackathon with Vietnamese localization and AI-powered features.",
         "tags": [],
         "techStacks": [],
-        "projectUrl": "",
-        "githubUrl": "",
-        "imageUrls": [],
-        "startDate": "",
-        "endDate": ""
+        "projectUrl": "https://splitly.khangdev.me",
+        "githubUrl": "https://github.com/hgatra/splitly",
+        "imageUrls": [
+            "/assets/images/projects/splitly_1.png"
+        ],
+        "startDate": "2025-10-01",
+        "endDate": "2025-11-30"
     },
     {
         "name": "SABase",
@@ -35,8 +37,23 @@
     {
         "name": "FAME: Frequency-Aware Multi-scale Ensemble",
         "description": "FAME is a framework for financial time series forecasting with frequency-aware decomposition and multi-scale ensemble learning. It provides a user-friendly interface (via Streamlit) to upload or select datasets, train hybrid models, visualize results, and evaluate predictive performance.",
-        "tags": ["Deep Learning", "Time Series Forecasting", "Finance", "Hybrid Models", "Explainable AI", "Empirical Mode Decomposition"],
-        "techStacks": ["Python", "Streamlit", "TensorFlow", "Keras", "Pandas", "NumPy", "Matplotlib"],
+        "tags": [
+            "Deep Learning",
+            "Time Series Forecasting",
+            "Finance",
+            "Hybrid Models",
+            "Explainable AI",
+            "Empirical Mode Decomposition"
+        ],
+        "techStacks": [
+            "Python",
+            "Streamlit",
+            "TensorFlow",
+            "Keras",
+            "Pandas",
+            "NumPy",
+            "Matplotlib"
+        ],
         "projectUrl": "",
         "githubUrl": "https://github.com/hatradev/FAME",
         "imageUrls": [
