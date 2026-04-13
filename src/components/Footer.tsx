@@ -1,7 +1,8 @@
 import React from 'react';
-import logoLight from '~/assets/logo/logo-light.png';
-import logoDark from '~/assets/logo/logo-dark.png';
+import logoLight from '/assets/logo/logo-light.png';
+import logoDark from '/assets/logo/logo-dark.png';
 import profileData from '@/data/profile.json';
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
     darkMode: boolean;
@@ -23,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
         },
         {
             title: 'Blog',
-            link: '/blog'
+            link: '/posts'
         }
     ]
 
@@ -44,14 +45,14 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
                         </p>
                         <div className="flex gap-4">
                             {socialLinks.map((social, index) => (
-                                <a 
+                                <Link
                                     key={index}
-                                    href={social.link} 
-                                    target="_blank" 
-                                    rel="noreferrer" 
+                                    to={social.link}
+                                    target="_blank"
+                                    rel="noreferrer"
                                     className="text-muted hover:text-primary transition-all duration-300 hover:-translate-y-1 hover:scale-110"
                                 >
-                                    <div 
+                                    <div
                                         className="h-6 w-6 bg-current"
                                         style={{
                                             maskImage: `url(${social.icon})`,
@@ -64,7 +65,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
                                             WebkitMaskSize: 'contain'
                                         }}
                                     />
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -75,7 +76,9 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
                         <ul className="space-y-4">
                             {navItems.map((item) => (
                                 <li key={item.title}>
-                                    <a href={item.link} className="text-muted hover:text-primary transition-colors text-sm">{item.title}</a>
+                                    <Link to={item.link} className="text-muted hover:text-primary transition-colors text-sm">
+                                        {item.title}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

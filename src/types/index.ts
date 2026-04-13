@@ -6,6 +6,17 @@ export interface Project {
   projectUrl: string;
   githubUrl: string;
   imageUrls: string[];
+  startDate: string;
+  endDate: string;
+}
+
+export interface LatestPost {
+  _id: string;
+  title: string;
+  tags: string[];
+  createdAt: string;
+  lastChangedAt: string;
+  content: string;
 }
 
 export interface Post {

@@ -1,11 +1,11 @@
 import React from 'react';
-import GraduationCap from '~/assets/icons/solid-graduation-cap.svg';
-import Briefcase from '~/assets/icons/solid-briefcase.svg';
-import Handshake from '~/assets/icons/solid-handshake.svg';
+import GraduationCap from '/assets/icons/solid-graduation-cap.svg';
+import Briefcase from '/assets/icons/solid-briefcase.svg';
+import Handshake from '/assets/icons/solid-handshake.svg';
 import experienceData from '@/data/experiences.json';
 
 const ExperiencePage: React.FC = () => {
-    const sortedExperience = [...experienceData].sort((a, b) => 
+    const sortedExperience = [...experienceData].sort((a, b) =>
         new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
     );
 
@@ -49,10 +49,10 @@ const ExperiencePage: React.FC = () => {
                                                 {exp.startDate} - {exp.endDate}
                                             </span>
                                             <h3 className="text-xl font-bold text-text">{exp.position}</h3>
-                                            <a 
-                                                href={exp.companyUrl} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer" 
+                                            <a
+                                                href={exp.companyUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="text-lg text-secondary font-medium mb-1 hover:underline inline-block"
                                             >
                                                 {exp.company}

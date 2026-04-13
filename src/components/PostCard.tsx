@@ -1,54 +1,60 @@
+import type { LatestPost } from '@/types';
 import React from 'react';
-
-interface Post {
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  imageUrl?: string;
-  slug: string;
-}
+import { Link } from 'react-router-dom';
 
 interface PostCardProps {
-  post: Post;
+  post: LatestPost;
 }
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
+  const getImageUrlByTags = (tags: string[]): string => {
+    if (tags.includes('Math')) return '/assets/images/cover/math-post.png';
+    if (tags.includes('Code')) return '/assets/images/cover/code-post.png';
+    if (tags.includes('IT')) return '/assets/images/cover/it-post.png';
+    return '/assets/images/cover/sharing-post.png';
+  };
+
+  const calculateReadTime = (content: string): string => {
+    const wordsPerMinute = 200; // Average reading speed
+    const words = content.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `${minutes} min read`;
+  };
+
+  const getExcerpt = (content: string): string => {
+    const cleanedContent = content
+      .replace(/---[\s\S]*?---/g, '')
+      .replace(/#+\s/g, '')
+      .replace('[toc]', '')
+      .trim();
+    return cleanedContent.length > 150 ? cleanedContent.slice(0, 150) + '...' : cleanedContent;
+  }
+
   return (
-    <div className="group flex flex-col overflow-hidden rounded-2xl bg-surface border border-muted/20 shadow-sm transition-all hover:shadow-md hover:border-secondary/50 h-full">
+    <Link
+      to={`/posts/${post._id}`}
+      className="group flex flex-col overflow-hidden rounded-2xl bg-surface border border-muted/20 shadow-sm transition-all hover:shadow-md hover:border-secondary/50 h-full">
       <div className="aspect-[2/1] w-full bg-muted/10 overflow-hidden">
-        {post.imageUrl ? (
-          <img
-            src={post.imageUrl}
-            alt={post.title}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        ) : (
-          <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5 text-muted">
-            <span className="text-4xl opacity-20">✍️</span>
-          </div>
-        )}
+        <img
+          src={getImageUrlByTags(post.tags)}
+          alt={post.title}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
       </div>
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center gap-2 text-xs text-muted mb-3">
-          <span>{post.date}</span>
+          <span>{post.createdAt}</span>
           <span>•</span>
-          <span>{post.readTime}</span>
+          <span>{calculateReadTime(post.content)}</span>
         </div>
         <h3 className="text-lg font-bold text-text mb-2 group-hover:text-secondary transition-colors line-clamp-2">
           {post.title}
         </h3>
         <p className="text-muted text-sm line-clamp-3 flex-1">
-          {post.excerpt}
+          {getExcerpt(post.content)}
         </p>
-        <div className="mt-4 flex items-center text-sm font-medium text-secondary">
-          Read more
-          <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

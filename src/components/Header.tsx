@@ -1,8 +1,9 @@
 import React from 'react';
-import logoLight from '~/assets/logo/logo-light.png';
-import logoDark from '~/assets/logo/logo-dark.png';
-import sunIcon from '~/assets/icons/outline-sun.svg';
-import moonIcon from '~/assets/icons/outline-moon.svg';
+import logoLight from '/assets/logo/logo-light.png';
+import logoDark from '/assets/logo/logo-dark.png';
+import sunIcon from '/assets/icons/outline-sun.svg';
+import moonIcon from '/assets/icons/outline-moon.svg';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
     darkMode: boolean;
@@ -25,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleTheme }) => {
         },
         {
             title: 'Blog',
-            link: '/blog'
+            link: '/posts'
         }
     ]
 
@@ -47,13 +48,13 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleTheme }) => {
                 {/* Navigation */}
                 <nav className="hidden md:flex items-center gap-8">
                     {navItems.map((item) => (
-                        <a
+                        <Link
                             key={item.title}
-                            href={`${item.link}`}
+                            to={`${item.link}`}
                             className="text-sm font-medium transition-colors text-muted hover:text-primary"
                         >
                             {item.title}
-                        </a>
+                        </Link>
                     ))}
                 </nav>
 

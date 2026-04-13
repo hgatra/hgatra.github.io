@@ -1,50 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import GraduationCap from '~/assets/icons/solid-graduation-cap.svg';
-import Briefcase from '~/assets/icons/solid-briefcase.svg';
-import Handshake from '~/assets/icons/solid-handshake.svg';
+import GraduationCap from '/assets/icons/solid-graduation-cap.svg';
+import Briefcase from '/assets/icons/solid-briefcase.svg';
+import Handshake from '/assets/icons/solid-handshake.svg';
 import LandingBackground from '@/components/LandingBackground';
 import HeroSection from '@/components/HeroSection';
 import ProjectCard from '@/components/ProjectCard';
 import PostCard from '@/components/PostCard';
 import experienceData from '@/data/experiences.json';
 import projectsData from '@/data/allprojects.json';
-
-// Mock posts data since we don't have a file for it yet
-const mockPosts = [
-    {
-        title: "Getting Started with React and Tailwind CSS",
-        excerpt: "Learn how to set up a modern web development environment using Vite, React, and Tailwind CSS v4.",
-        date: "Dec 28, 2025",
-        readTime: "5 min read",
-        slug: "getting-started-react-tailwind"
-    },
-    {
-        title: "Understanding TypeScript Generics",
-        excerpt: "A deep dive into TypeScript generics and how they can help you write more reusable and type-safe code.",
-        date: "Dec 20, 2025",
-        readTime: "8 min read",
-        slug: "typescript-generics"
-    },
-    {
-        title: "The Future of AI in Software Engineering",
-        excerpt: "Exploring how AI tools like Copilot and ChatGPT are transforming the way we write and maintain code.",
-        date: "Dec 15, 2025",
-        readTime: "6 min read",
-        slug: "ai-software-engineering"
-    },
-    {
-        title: "Building Accessible Web Applications",
-        excerpt: "Best practices and tips for ensuring your web applications are accessible to everyone.",
-        date: "Dec 10, 2025",
-        readTime: "7 min read",
-        slug: "accessible-web-apps"
-    }
-];
+import { useLatestPosts } from '@/hooks/useLatestPosts';
+import type { LatestPost } from '@/types';
 
 const HomePage: React.FC = () => {
     const topProjects = projectsData.slice(0, 4);
-    const topPosts = mockPosts.slice(0, 4);
+    const latestPostsQuery = useLatestPosts();
+    const latestPosts: LatestPost[] = latestPostsQuery.data?.data || [];
 
     return (
         <div className="flex flex-col w-full">
@@ -97,10 +68,10 @@ const HomePage: React.FC = () => {
                                                 {exp.startDate} - {exp.endDate}
                                             </span>
                                             <h3 className="text-xl font-bold text-text">{exp.position}</h3>
-                                            <a 
-                                                href={exp.companyUrl} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer" 
+                                            <a
+                                                href={exp.companyUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="text-lg text-secondary font-medium mb-2 hover:underline inline-block"
                                             >
                                                 {exp.company}
@@ -167,7 +138,7 @@ const HomePage: React.FC = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {topPosts.map((post, index) => (
+                        {latestPosts.map((post, index) => (
                             <PostCard key={index} post={post} />
                         ))}
                     </div>
