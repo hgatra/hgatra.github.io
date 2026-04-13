@@ -6,7 +6,7 @@
         "AI Enthusiast",
         "Tech Blogger"
     ],
-    "description": "Hi! I'm Tra Hoang, a passionate senior student majoring in Software Engineering at the University of Science with a strong foundation in programming and problem-solving. I'm eager to continuously learn and enhance my expertise, with a dedicated goal of becoming a proficient software engineer.",
+    "description": "Hi! I'm Tra Hoang, a passionate student majoring in Software Engineering at the University of Science with a strong foundation in programming and problem-solving. I'm eager to continuously learn and enhance my expertise, with a dedicated goal of becoming a proficient software engineer.",
     "cvUrl": "",
     "profileImagesFolder": "assets/images/profile/",
     "profileImages": [
@@ -20,7 +20,7 @@
         {
             "name": "GitHub",
             "icon": "assets/icons/solid-github.svg",
-            "link": "https://github.com/hatradev"
+            "link": "https://github.com/hgatra"
         },
         {
             "name": "LinkedIn",
@@ -36,7 +36,7 @@
             "name": "Kaggle",
             "icon": "assets/icons/solid-kaggle.svg",
             "link": "https://www.kaggle.com/hoangtra"
-        },       
+        },
         {
             "name": "Email",
             "icon": "assets/icons/solid-envelope.svg",

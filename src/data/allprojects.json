@@ -1,20 +1,43 @@
 [
     {
         "name": "eVocab",
-        "description": "",
-        "tags": [],
-        "techStacks": [],
+        "description": "A modern full-stack platform for learning English through personalized vocabulary, grammar, context-based practice, and AI-assisted feedback.",
+        "tags": [
+            "Language Learning",
+            "Vocabulary Building",
+            "Grammar Practice",
+            "Contextual Learning",
+            "AI Feedback"
+        ],
+        "techStacks": [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Gemini API"
+        ],
         "projectUrl": "",
         "githubUrl": "",
         "imageUrls": [],
-        "startDate": "",
-        "endDate": ""
+        "startDate": "2026-03-15",
+        "endDate": "2026-06-30"
     },
     {
         "name": "Splitly",
         "description": "A modern, full-stack expense sharing application that makes splitting bills with friends, family, and groups effortless. Built for the Naver AI Hackathon with Vietnamese localization and AI-powered features.",
-        "tags": [],
-        "techStacks": [],
+        "tags": [
+            "NAVER AI Hackathon",
+            "Expense Sharing",
+            "Web Application",
+            "Full Stack Development",
+            "AI Integration"
+        ],
+        "techStacks": [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB"
+        ],
         "projectUrl": "https://splitly.khangdev.me",
         "githubUrl": "https://github.com/hgatra/splitly",
         "imageUrls": [
@@ -22,17 +45,6 @@
         ],
         "startDate": "2025-10-01",
         "endDate": "2025-11-30"
-    },
-    {
-        "name": "SABase",
-        "description": "",
-        "tags": [],
-        "techStacks": [],
-        "projectUrl": "",
-        "githubUrl": "",
-        "imageUrls": [],
-        "startDate": "",
-        "endDate": ""
     },
     {
         "name": "FAME: Frequency-Aware Multi-scale Ensemble",
@@ -63,5 +75,53 @@
         ],
         "startDate": "2025-01-01",
         "endDate": "2025-08-15"
+    },
+    {
+        "name": "Datto",
+        "description": "Datto is a combination of Dating and Together. This app was created for groups of friends or couples to manage their shared activities, including receiving notifications about memorable dates and scheduling outings together.",
+        "tags": [
+            "Mobile App",
+            "Kotlin",
+            "Shared Calendar",
+            "Event Management",
+            "Notifications"
+        ],
+        "techStacks": [
+            "Kotlin",
+            "Android Studio",
+            "Firebase",
+            "Express",
+            "MongoDB"
+        ],
+        "projectUrl": "",
+        "githubUrl": "https://github.com/hgatra/Datto",
+        "imageUrls": [
+            "/assets/images/projects/datto_1.png",
+            "/assets/images/projects/datto_2.png"
+        ],
+        "startDate": "2024-02-01",
+        "endDate": "2024-05-31"
+    },
+    {
+        "name": "2HandBook",
+        "description": "2HandBook serves as a marketplace for students to sell old materials and learning tools thay no longer need to other students. The platform provides a convenient and efficient way for students to exchange resources, promoting sustainability and cost-effectiveness in education.",
+        "tags": [
+            "Web Application",
+            "Second-hand Book Trading"
+        ],
+        "techStacks": [
+            "Handlebars",
+            "Javascript",
+            "SASS/SCSS",
+            "MongoDB",
+            "Redis"
+        ],
+        "projectUrl": "",
+        "githubUrl": "https://github.com/hgatra/2HandBook",
+        "imageUrls": [
+            "/assets/images/projects/2handbook_1.png"
+        ],
+        "startDate": "2023-05-01",
+        "endDate": "2023-08-31"
     }
 ]

@@ -9,12 +9,27 @@
         "endDate": "2026-04",
         "description": "Pursuing a Bachelor's degree in Software Engineering, focusing on software development, algorithms, and data structures. Engaged in various projects and coursework to build a strong foundation in software engineering principles and practices.",
         "technologies": [
-            "Java",
+            "Javascript",
             "C++",
             "Python",
             "Data Structures",
             "Algorithms",
             "Database Management"
+        ]
+    },
+    {
+        "type": "working",
+        "position": "Tutor Freelancer - Part-time",
+        "company": "Ong Mat Troi Tutoring Center",
+        "companyUrl": "https://giasuongmattroi.com/",
+        "location": "Ho Chi Minh City, Vietnam",
+        "startDate": "2022-03-01",
+        "endDate": "2022-12-31",
+        "description": "Tutor in Math, Physics, and Programming. Supported students in improving knowledge and enhancing academic performance resulting in a 2 - 5 points increase in test scores. Developed effective communication, time management, and problem-solving skills.",
+        "technologies": [
+            "Tutoring",
+            "Time Management",
+            "Communication"
         ]
     },
     {

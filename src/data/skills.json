@@ -42,12 +42,6 @@
         "level": "Beginner"
     },
     {
-        "name": "Docker",
-        "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-        "link": "https://www.docker.com/",
-        "level": "Beginner"
-    },
-    {
         "name": "C++",
         "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
         "link": "https://isocpp.org/",
