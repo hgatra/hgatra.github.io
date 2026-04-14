@@ -10,7 +10,7 @@ export interface Project {
   endDate: string;
 }
 
-export interface LatestPost {
+export interface Post {
   _id: string;
   title: string;
   tags: string[];
@@ -19,13 +19,24 @@ export interface LatestPost {
   content: string;
 }
 
-export interface Post {
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  slug: string;
-  coverImage?: string;
+export interface DetailPost extends Post {
+  publishType: 'view' | string;
+  publishedAt: string | null;
+  permalink: string | null;
+  shortId: string;
+  lastChangeUser: UserMetadata;
+  userPath: string;
+  teamPath: string | null;
+  readPermission: 'guest' | 'signed_in' | string;
+  writePermission: 'signed_in' | string;
+  publishLink: string;
+}
+
+export interface UserMetadata {
+  name: string;
+  photo: string;
+  biography: string | null;
+  userPath: string;
 }
 
 export interface Experience {

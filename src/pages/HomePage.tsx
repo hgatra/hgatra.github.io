@@ -10,12 +10,12 @@ import PostCard from '@/components/PostCard';
 import experienceData from '@/data/experiences.json';
 import projectsData from '@/data/allprojects.json';
 import { useLatestPosts } from '@/hooks/useLatestPosts';
-import type { LatestPost } from '@/types';
+import type { Post } from '@/types';
 
 const HomePage: React.FC = () => {
     const topProjects = projectsData.slice(0, 4);
     const latestPostsQuery = useLatestPosts();
-    const latestPosts: LatestPost[] = latestPostsQuery.data?.data || [];
+    const latestPosts: Post[] = latestPostsQuery.data?.data || [];
 
     return (
         <div className="flex flex-col w-full">

@@ -1,9 +1,9 @@
-import type { LatestPost } from '@/types';
+import type { Post } from '@/types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface PostCardProps {
-  post: LatestPost;
+  post: Post;
 }
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
@@ -14,14 +14,16 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
     return '/assets/images/cover/sharing-post.png';
   };
 
-  const calculateReadTime = (content: string): string => {
+  const calculateReadTime = (content?: string): string => {
+    if (!content) return '~1 min read';
     const wordsPerMinute = 200; // Average reading speed
     const words = content.trim().split(/\s+/).length;
     const minutes = Math.ceil(words / wordsPerMinute);
     return `${minutes} min read`;
   };
 
-  const getExcerpt = (content: string): string => {
+  const getExcerpt = (content?: string): string => {
+    if (!content) return '';
     const cleanedContent = content
       .replace(/---[\s\S]*?---/g, '')
       .replace(/#+\s/g, '')
