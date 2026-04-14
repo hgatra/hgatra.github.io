@@ -4,18 +4,8 @@ import ProjectImageGallery from '@/components/projects/ProjectImageGallery';
 import ProjectMetaSidebar from '@/components/projects/ProjectMetaSidebar';
 import projectData from '@/data/allprojects.json';
 import type { Project } from '@/types';
-
-const createSlug = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-
-const dateFormatter = new Intl.DateTimeFormat('en', {
-  month: 'short',
-  year: 'numeric',
-});
-
-const formatProjectDate = (dateString: string) => {
-  const date = new Date(dateString);
-  return Number.isNaN(date.getTime()) ? dateString : dateFormatter.format(date);
-};
+import { formatProjectDate } from '@/utils/date';
+import { createSlug } from '@/utils/slug';
 
 const ProjectPage: React.FC = () => {
   const { slug } = useParams();
