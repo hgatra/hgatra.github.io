@@ -1,13 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import GraduationCap from '/assets/icons/solid-graduation-cap.svg';
 import Briefcase from '/assets/icons/solid-briefcase.svg';
 import Handshake from '/assets/icons/solid-handshake.svg';
 import experienceData from '@/data/experiences.json';
 
+interface Achievement {
+    name: string;
+    issuer: string;
+    issueDate: string;
+    description?: string;
+    credentialUrl?: string;
+    fileUrl?: string;
+}
+
 const ExperiencePage: React.FC = () => {
+    const [selectedAchievement, setSelectedAchievement] = useState<Achievement | null>(null);
     const sortedExperience = [...experienceData].sort((a, b) =>
         new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
     );
+
+    useEffect(() => {
+        if (!selectedAchievement) {
+            return;
+        }
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+
+        const onEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setSelectedAchievement(null);
+            }
+        };
+
+        window.addEventListener('keydown', onEscape);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.removeEventListener('keydown', onEscape);
+        };
+    }, [selectedAchievement]);
 
     return (
         <div className="min-h-screen pt-40 pb-16 px-6">
@@ -74,6 +106,30 @@ const ExperiencePage: React.FC = () => {
                                                     </span>
                                                 ))}
                                             </div>
+
+                                            {exp.achievements?.length > 0 && (
+                                                <div className="mt-5 w-full rounded-xl border border-primary/20 bg-primary/5 p-4">
+                                                    <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">
+                                                        Achievements
+                                                    </p>
+                                                    <div className="space-y-3">
+                                                        {exp.achievements.map((achievement) => (
+                                                            <button
+                                                                key={`${achievement.name}-${achievement.issueDate}`}
+                                                                type="button"
+                                                                onClick={() => setSelectedAchievement(achievement as Achievement)}
+                                                                className="w-full rounded-lg border border-muted/15 bg-surface/70 p-3 text-left transition hover:border-primary/30 hover:bg-primary/5"
+                                                            >
+                                                                <p className="text-sm font-semibold text-text">{achievement.name}</p>
+                                                                <p className="mt-1 text-xs text-muted">
+                                                                    {achievement.issuer} • {achievement.issueDate}
+                                                                </p>
+                                                                <p className="mt-2 text-xs font-medium text-primary">View details</p>
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -85,6 +141,71 @@ const ExperiencePage: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            {selectedAchievement && (
+                <div className="fixed inset-0 z-[2000]">
+                    <button
+                        type="button"
+                        aria-label="Close achievement details"
+                        className="absolute inset-0 bg-black/55"
+                        onClick={() => setSelectedAchievement(null)}
+                    />
+
+                    <div className="relative z-10 mx-auto mt-10 max-h-[calc(100vh-5rem)] w-[min(860px,92vw)] overflow-y-auto rounded-2xl border border-muted/20 bg-surface p-6 shadow-2xl md:p-8">
+                        <div className="mb-4 flex items-start justify-between gap-4">
+                            <div>
+                                <p className="text-xs font-semibold uppercase tracking-wider text-primary">Achievement</p>
+                                <h2 className="mt-2 text-2xl font-bold text-text md:text-3xl">{selectedAchievement.name}</h2>
+                                <p className="mt-2 text-sm text-muted">
+                                    {selectedAchievement.issuer} • {selectedAchievement.issueDate}
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => setSelectedAchievement(null)}
+                                className="rounded-lg border border-muted/20 px-3 py-1.5 text-sm text-muted transition hover:bg-muted/10"
+                            >
+                                Close
+                            </button>
+                        </div>
+
+                        {selectedAchievement.fileUrl && (
+                            <img
+                                src={selectedAchievement.fileUrl}
+                                alt={selectedAchievement.name}
+                                className="mb-5 max-h-[50vh] w-full rounded-xl border border-muted/15 object-contain bg-muted/5"
+                            />
+                        )}
+
+                        {selectedAchievement.description && (
+                            <p className="text-sm leading-relaxed text-muted md:text-base">{selectedAchievement.description}</p>
+                        )}
+
+                        <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium">
+                            {selectedAchievement.credentialUrl && (
+                                <a
+                                    href={selectedAchievement.credentialUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-primary transition hover:bg-primary/15"
+                                >
+                                    Open Credential
+                                </a>
+                            )}
+                            {selectedAchievement.fileUrl && (
+                                <a
+                                    href={selectedAchievement.fileUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-lg border border-secondary/30 bg-secondary/10 px-4 py-2 text-secondary transition hover:bg-secondary/15"
+                                >
+                                    Open Attachment
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

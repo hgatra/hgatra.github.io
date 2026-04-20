@@ -15,6 +15,32 @@
             "Data Structures",
             "Algorithms",
             "Database Management"
+        ],
+        "achievements": [
+            {
+                "name": "Certificate of Merit for Successfully Completing Duties as a Class Committee Member",
+                "issuer": "VNU-HCM University of Science",
+                "issueDate": "2023-08-22",
+                "description": "Awarded for successfully fulfilling the responsibilities of a class committee member, demonstrating dedication and commitment to supporting classmates and contributing to a positive learning environment.",
+                "credentialUrl": "https://www.hcmus.edu.vn/",
+                "fileUrl": "/assets/files/bancansu2023.png"
+            },
+            {
+                "name": "Certificate of Recognition - Dean's List 2022-2023",
+                "issuer": "Faculty of Information Technology, VNUHCM - University of Science",
+                "issueDate": "2023-12-20",
+                "description": "Awarded for achieving a place on the Dean's List of the Faculty of Information Technology for outstanding academic performance during the academic year 2022-2023.",
+                "credentialUrl": "https://www.fit.hcmus.edu.vn/",
+                "fileUrl": "/assets/files/deanlist2023.png"
+            },
+            {
+                "name": "Certificate of NAVER Vietnam AI Hackathon 2025 Participation",
+                "issuer": "NAVER Vietnam",
+                "issueDate": "2025-12-05",
+                "description": "Awarded for active participation in the NAVER Vietnam AI Hackathon 2025, demonstrating enthusiasm and commitment to AI development and innovation.",
+                "credentialUrl": "https://event.navercorp.vn/event/naver-vietnam-ai-hackathon-2025/",
+                "fileUrl": "/assets/files/navervn2025.png"
+            }
         ]
     },
     {
@@ -30,7 +56,8 @@
             "Tutoring",
             "Time Management",
             "Communication"
-        ]
+        ],
+        "achievements": []
     },
     {
         "type": "volunteering",
@@ -46,6 +73,24 @@
             "Team Leadership",
             "Project Management",
             "Communication"
+        ],
+        "achievements": [
+            {
+                "name": "Certificate of Contribution - Extra-Curricular Activities 2022-2023",
+                "issuer": "Faculty of Information Technology, VNUHCM - University of Science",
+                "issueDate": "2023-12-20",
+                "description": "Awarded for active participation in extra-curricular activities during the academic year 2022-2023 under the High-Quality Program.",
+                "credentialUrl": "https://www.fit.hcmus.edu.vn/",
+                "fileUrl": "/assets/files/eca2023.png"
+            },
+            {
+                "name": "Certificate of Contribution - Extra-Curricular Activities 2023-2024",
+                "issuer": "Faculty of Information Technology, VNUHCM - University of Science",
+                "issueDate": "2024-12-10",
+                "description": "Awarded for active participation in extra-curricular activities during the academic year 2023-2024 under the High-Quality Program.",
+                "credentialUrl": "https://www.fit.hcmus.edu.vn/",
+                "fileUrl": "/assets/files/eca2024.png"
+            }
         ]
     }
 ]
