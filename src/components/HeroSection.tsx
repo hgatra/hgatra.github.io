@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import profileData from '@/data/profile.json';
 import skillsData from '@/data/skills.json';
 import ProfilePhotoCard from './ProfilePhotoCard';
@@ -105,14 +106,15 @@ const HeroSection: React.FC = () => {
 
                 {/* CV Button */}
                 <div className="pt-6">
-                    <a
-                        href={profileData.cvUrl}
+                    <Link
+                        to={`/${profileData.cvUrl}`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        download="CV_HoangAnhTra.pdf"
                         className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
                     >
                         Get My CV
-                    </a>
+                    </Link>
                 </div>
             </div>
 
