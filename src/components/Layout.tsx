@@ -9,10 +9,10 @@ interface LayoutProps {
 
 const Layout = ({ darkMode, toggleTheme }: LayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col transition-colors duration-300 bg-background text-text relative overflow-hidden">
-      
+    <div className="min-h-screen flex flex-col transition-colors duration-300 bg-background text-text relative">
+
       {/* Hero Gradient Background - Fixed position to stay in background */}
-      <div 
+      <div
         className="fixed inset-0 -z-10 opacity-15 dark:opacity-20 pointer-events-none"
         style={{ backgroundImage: 'var(--bg-hero-gradient)' }}
       />
