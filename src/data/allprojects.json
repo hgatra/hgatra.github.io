@@ -18,7 +18,9 @@
         ],
         "projectUrl": "",
         "githubUrl": "",
-        "imageUrls": [],
+        "imageUrls": [
+            "/assets/images/projects/evocab_1.png"
+        ],
         "startDate": "2026-03-15",
         "endDate": "2026-06-30"
     },
