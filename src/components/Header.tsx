@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleTheme }) => {
         <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6">
             <div className="flex items-center justify-between w-full max-w-7xl px-6 py-3 rounded-2xl border backdrop-blur-xl transition-all duration-300 bg-surface/60 dark:bg-background/60 border-muted/20 shadow-xl shadow-black/5 dark:shadow-black/40">
                 {/* Logo Section */}
-                <div className="flex items-center gap-3 pl-2">
+                <Link to="/" className="flex items-center gap-3 pl-2">
                     <img
                         src={darkMode ? logoDark : logoLight}
                         alt="Tra Hoang Logo"
@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleTheme }) => {
                     <span className="font-bold text-lg tracking-tight text-text">
                         Tra Hoang
                     </span>
-                </div>
+                </Link>
 
                 {/* Navigation */}
                 <nav className="hidden md:flex items-center gap-8">
