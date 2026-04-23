@@ -129,7 +129,7 @@ const HomePage: React.FC = () => {
                             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Latest Posts</h2>
                             <div className="h-1 w-20 bg-secondary rounded-full"></div>
                         </div>
-                        <Link to="/blog" className="hidden md:flex items-center text-secondary font-medium hover:underline">
+                        <Link to="/posts" className="hidden md:flex items-center text-secondary font-medium hover:underline">
                             Read All Posts
                             <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -144,7 +144,7 @@ const HomePage: React.FC = () => {
                     </div>
 
                     <div className="mt-8 text-center md:hidden">
-                        <Link to="/blog" className="inline-flex items-center text-secondary font-medium hover:underline">
+                        <Link to="/posts" className="inline-flex items-center text-secondary font-medium hover:underline">
                             Read All Posts
                             <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
