@@ -15,6 +15,7 @@ import type { Post } from '@/types';
 const HomePage: React.FC = () => {
     const topProjects = projectsData.slice(0, 4);
     const latestPostsQuery = useLatestPosts();
+    const isLatestPostsLoading = latestPostsQuery.isLoading;
     const latestPosts: Post[] = latestPostsQuery.data?.data || [];
 
     return (
@@ -138,9 +139,25 @@ const HomePage: React.FC = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {latestPosts.map((post, index) => (
-                            <PostCard key={index} post={post} />
-                        ))}
+                        {isLatestPostsLoading ? (
+                            Array.from({ length: 4 }).map((_, index) => (
+                                <div key={`latest-post-skeleton-${index}`} className="overflow-hidden rounded-2xl border border-muted/20 bg-surface shadow-sm animate-pulse">
+                                    <div className="aspect-[2/1] w-full bg-muted/20" />
+                                    <div className="p-6">
+                                        <div className="mb-4 h-3 w-2/3 rounded bg-muted/20" />
+                                        <div className="mb-2 h-5 w-11/12 rounded bg-muted/20" />
+                                        <div className="mb-2 h-5 w-3/4 rounded bg-muted/20" />
+                                        <div className="mt-4 h-4 w-full rounded bg-muted/20" />
+                                        <div className="mt-2 h-4 w-5/6 rounded bg-muted/20" />
+                                        <div className="mt-2 h-4 w-2/3 rounded bg-muted/20" />
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            latestPosts.map((post, index) => (
+                                <PostCard key={index} post={post} />
+                            ))
+                        )}
                     </div>
 
                     <div className="mt-8 text-center md:hidden">

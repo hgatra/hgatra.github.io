@@ -90,13 +90,20 @@ const AllPostsPage: React.FC = () => {
 
         <div className="mt-10">
           {isLoading ? (
-            <div className="flex items-center justify-center py-24">
-              <div className="text-center">
-                <div className="mb-4 inline-block">
-                  <div className="h-12 w-12 rounded-full border-4 border-muted/20 border-t-primary animate-spin"></div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {Array.from({ length: PAGE_SIZE }).map((_, index) => (
+                <div key={`all-posts-skeleton-${index}`} className="overflow-hidden rounded-2xl border border-muted/20 bg-surface shadow-sm animate-pulse">
+                  <div className="aspect-[2/1] w-full bg-muted/20" />
+                  <div className="p-6">
+                    <div className="mb-4 h-3 w-2/3 rounded bg-muted/20" />
+                    <div className="mb-2 h-5 w-11/12 rounded bg-muted/20" />
+                    <div className="mb-2 h-5 w-3/4 rounded bg-muted/20" />
+                    <div className="mt-4 h-4 w-full rounded bg-muted/20" />
+                    <div className="mt-2 h-4 w-5/6 rounded bg-muted/20" />
+                    <div className="mt-2 h-4 w-2/3 rounded bg-muted/20" />
+                  </div>
                 </div>
-                <p className="text-muted">Loading posts...</p>
-              </div>
+              ))}
             </div>
           ) : isError ? (
             <div className="rounded-3xl border border-dashed border-muted/20 bg-surface p-12 text-center shadow-sm">

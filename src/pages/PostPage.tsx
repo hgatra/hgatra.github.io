@@ -15,9 +15,43 @@ const PostPage: React.FC = () => {
   if (postQuery.isLoading) {
     return (
       <div className="min-h-screen pt-28 pb-20 px-6">
-        <div className="max-w-4xl mx-auto rounded-3xl border border-muted/10 bg-surface p-10 text-center shadow-sm">
-          <div className="inline-block h-10 w-10 animate-spin rounded-full border-4 border-muted/20 border-t-primary" />
-          <p className="mt-4 text-muted">Loading post...</p>
+        <div className="mx-auto max-w-7xl animate-pulse">
+          <div className="mb-6 h-5 w-36 rounded bg-muted/20" />
+
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
+            <article className="overflow-hidden rounded-3xl border border-muted/10 bg-surface shadow-sm">
+              <header className="border-b border-muted/10 px-6 py-10 md:px-10">
+                <div className="h-10 w-5/6 rounded bg-muted/20 md:h-12" />
+                <div className="mt-5 h-4 w-56 rounded bg-muted/20" />
+                <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="h-6 w-16 rounded-full bg-muted/20" />
+                  <div className="h-6 w-20 rounded-full bg-muted/20" />
+                  <div className="h-6 w-14 rounded-full bg-muted/20" />
+                </div>
+              </header>
+
+              <div className="space-y-4 px-6 py-8 md:px-10">
+                <div className="h-4 w-full rounded bg-muted/20" />
+                <div className="h-4 w-full rounded bg-muted/20" />
+                <div className="h-4 w-11/12 rounded bg-muted/20" />
+                <div className="h-4 w-full rounded bg-muted/20" />
+                <div className="h-4 w-5/6 rounded bg-muted/20" />
+                <div className="h-4 w-full rounded bg-muted/20" />
+                <div className="h-4 w-10/12 rounded bg-muted/20" />
+              </div>
+            </article>
+
+            <aside className="hidden overflow-hidden rounded-2xl border border-muted/10 bg-surface p-5 shadow-sm lg:block">
+              <div className="mb-4 h-5 w-2/3 rounded bg-muted/20" />
+              <div className="space-y-3">
+                <div className="h-3 w-full rounded bg-muted/20" />
+                <div className="h-3 w-5/6 rounded bg-muted/20" />
+                <div className="h-3 w-4/5 rounded bg-muted/20" />
+                <div className="h-3 w-11/12 rounded bg-muted/20" />
+                <div className="h-3 w-3/4 rounded bg-muted/20" />
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
     );
