@@ -20,6 +20,7 @@ export const remarkDirectiveRehype: Plugin<[], Root> = () => (tree) => {
             data.hProperties = {
                 ...(data.hProperties || {}),
                 datatype: name,
+                datakind: 'color',
             };
         }
     });

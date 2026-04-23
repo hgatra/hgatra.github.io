@@ -27,6 +27,6 @@ export const sanitizeConfig = {
     attributes: {
         ...defaultSchema.attributes,
         '*': ['className', 'id', 'style'],
-        'admonition': ['datatype'],
+        'admonition': ['datatype', 'datakind', 'datatitle'],
     },
 };
